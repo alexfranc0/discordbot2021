@@ -37,4 +37,12 @@ client.on('messageCreate', message => {
     }
 });
 
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isChatInputCommand()) return;
+
+    if (interaction.commandName === 'test') {
+        interaction.reply('i am merley a test');
+    }
+});
+
 client.login(process.env.BOT_TOKEN);
